@@ -56,7 +56,7 @@ public class LitwareLib
             this.TA = 0.25 * Salary;
             this.DA = 0.35 * Salary;
         } }
-     public double Calcu()
+     public double CalcuGross()
         {
         
        this.GrossSalary = this.Salary + this.HRA + this.TA +this.DA;
@@ -64,9 +64,13 @@ public class LitwareLib
 
         this.PF = 0.10 * this.GrossSalary;
         this.TDS = 0.18 * this.GrossSalary;
-        this.NetSalary = this.GrossSalary – this.PF ;
+ 
 
         return this.GrossSalary;
+    }
+    public double CalcuNet()
+    {
+       return  this.GrossSalary - this.PF + this.TDS;
     }
 }
 
@@ -78,6 +82,6 @@ public class Program
         LitwareLib l = new LitwareLib();
         l.input(5, "rahul");
         l.CalculateSalary(100);
-        Console.WriteLine(l.Calcu());
+  Console.WriteLine("GrossSalary = {0} and NetSalary = {1}",l.CalcuGross(),l.CalcuNet());
     }
 }
