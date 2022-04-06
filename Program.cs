@@ -1,9 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-public class LitwareLib
+namespace LitwareLib;
+public class Employee
 {
     private int EmpNo;
-    private string EmpName;
+    private string  EmpName;
     private double Salary;
     private double HRA;
     private double TA;
@@ -75,11 +76,11 @@ public class LitwareLib
 }
 
 
-public class Program
+public class Libraray
 {
     public static void Main(string[] args)
     {
-        LitwareLib l = new LitwareLib();
+        Employee l = new Employee();
         l.input(5, "rahul");
         l.CalculateSalary(100);
   Console.WriteLine("GrossSalary = {0} and NetSalary = {1}",l.CalcuGross(),l.CalcuNet());
